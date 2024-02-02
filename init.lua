@@ -188,7 +188,18 @@ require('lazy').setup({
       end,
     },
   },  
-  
+  {
+  "catppuccin/nvim",
+  lazy = false,
+  priority = 1000,
+  opts = {},config = function()
+    require('catppuccin').setup {
+      -- Set a style preset. 'dark' is default.
+      flavour = 'mocha',
+    }
+    require('catppuccin').load()
+  end,
+  },
   {
     -- Set lualine as statusline
     'nvim-lualine/lualine.nvim',
