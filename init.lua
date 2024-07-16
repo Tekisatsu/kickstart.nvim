@@ -205,7 +205,6 @@ require('lazy').setup({
   priority = 1000,
   opts = {},config = function()
     require('catppuccin').setup {
-      -- Set a style preset. 'dark' is default.
       flavour = 'mocha',
     }
     require('catppuccin').load()
