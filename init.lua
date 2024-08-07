@@ -210,7 +210,13 @@ require('lazy').setup({
       color_overrides = {
           all = {
           base = '#000000'},
-        }
+        },
+      custom_highlights = function (colors)
+        return {
+          Comment = {fg = colors.overlay1},
+          MatchParen = {fg = '#00ffff'},
+          }
+      end
     }
     require('catppuccin').load()
   end,
