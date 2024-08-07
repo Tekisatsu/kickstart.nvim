@@ -43,6 +43,7 @@ P.S. You can delete this when you're done too. It's your config now :)
 --  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
+vim.opt.scrolloff = 10
 
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    https://github.com/folke/lazy.nvim
@@ -206,6 +207,10 @@ require('lazy').setup({
   opts = {},config = function()
     require('catppuccin').setup {
       flavour = 'mocha',
+      color_overrides = {
+          all = {
+          base = '#000000'},
+        }
     }
     require('catppuccin').load()
   end,
@@ -358,6 +363,9 @@ require('telescope').setup {
         ['<C-u>'] = false,
         ['<C-d>'] = false,
       },
+    },
+    layout_stategy = 'vertical',
+    layout_config = { width = 0.95
     },
   },
 }
