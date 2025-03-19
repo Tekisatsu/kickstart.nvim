@@ -213,8 +213,7 @@ require('lazy').setup({
         },
       custom_highlights = function (colors)
         return {
-          Comment = {fg = colors.overlay1},
-          MatchParen = {fg = '#00ffff'},
+          Comment = {fg = colors.overlay2},
           }
       end
     }
@@ -295,7 +294,16 @@ require('lazy').setup({
 -- [[ Setting options ]]
 -- See `:help vim.o`
 -- NOTE: You can change these options as you wish!
-
+vim.o.fileencoding="utf-8"
+vim.o.fileformat="unix"
+vim.cmd("filetype plugin indent on")
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.softtabstop = 4
+vim.api.nvim_create_autocmd("BufWritePre", {
+    pattern = "*.py",
+    command = "%retab!",
+})
 -- Set highlight on search
 vim.o.hlsearch = false
 
